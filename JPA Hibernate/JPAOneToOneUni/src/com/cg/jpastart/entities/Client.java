@@ -17,7 +17,7 @@ public class Client {
 		homeAddress.setStreet("MG Road");
 		homeAddress.setCity("Pune");
 		homeAddress.setState("Maharashtra");
-		homeAddress.setZipCode("411 017");
+		homeAddress.setZipCode("411017");
 		
 		//inject address into student
 		student.setAddress(homeAddress);
