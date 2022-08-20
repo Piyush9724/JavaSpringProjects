@@ -9,4 +9,6 @@ Java/Banking/DBWallet/src/com/capgemini/.DS_Store
 Java/Banking/DBWallet/src/com/.DS_Store
 Java/Banking/DBWallet/src/com/capgemini/banking/.DS_Store
 Java/Banking/DBWallet/.DS_Store
-.DS_Store
+Java/Banking/SerializedWallet/.idea
+*.DS_Store
+*.iml
