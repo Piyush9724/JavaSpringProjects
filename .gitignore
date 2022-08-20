@@ -13,4 +13,5 @@ Java/Banking/SerializedWallet/.idea
 *.DS_Store
 *.iml
 *.idea
+Java/Banking/Banking-Application/target
 Java/Banking/SerializedWallet/out
