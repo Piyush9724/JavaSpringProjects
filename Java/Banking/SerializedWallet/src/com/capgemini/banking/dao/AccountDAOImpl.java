@@ -26,8 +26,8 @@ public class AccountDAOImpl  implements AccountDAO, Serializable {
 	
 	int lastAccNo;
 	
-	File file = new File("Java/Banking/SerializedWallet/resources/Repo.txt");
-	File file1 = new File("Java/Banking/SerializedWallet/resources/Trans.txt");
+	File file = new File("resources/Repo.txt");
+	File file1 = new File("resources/Trans.txt");
 	
 	public AccountDAOImpl() {
 		accountMap = new HashMap<Integer, Account>();

@@ -12,3 +12,5 @@ Java/Banking/DBWallet/.DS_Store
 Java/Banking/SerializedWallet/.idea
 *.DS_Store
 *.iml
+*.idea
+Java/Banking/SerializedWallet/out
