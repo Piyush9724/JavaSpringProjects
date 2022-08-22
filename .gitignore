@@ -15,3 +15,7 @@ Java/Banking/SerializedWallet/.idea
 *.idea
 Java/Banking/Banking-Application/target
 Java/Banking/SerializedWallet/out
+Java/Banking/Full Stack Wallet/Banking-Application/src/main/.DS_Store
+Java/Banking/Full Stack Wallet/Banking-Application/src/main/java/.DS_Store
+Java/Banking/Full Stack Wallet/Banking-Application/src/main/java/com/.DS_Store
+Java/Banking/Full Stack Wallet/Banking-Application/src/main/java/com/peoplesbank/.DS_Store
