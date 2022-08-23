@@ -1,0 +1,48 @@
+<div class="card" id="crd">
+    <div class="card-body">
+      <div class="container" id="crd">
+        <br>
+        <h2>Transfer Funds</h2>
+        <br>
+        <form #userForm='ngForm' (ngSubmit)="onSubmit(userForm)">
+          
+            <div class="from-group row">
+                <label class="col-sm-2 col-form-label">Account Number to Transfer From</label>
+                <div class="col-sm-6">
+                  <input type="number" class="form-control" #accNoFrom='ngModel' [ngClass]="{ 's-invalid': userForm.submitted && accNoFrom.invalid }" name="accNoFrom" placeholder="Enter Account number" required  ngModel>
+                </div>
+                <small *ngIf="userForm.submitted && accNoFrom.invalid" class="alert alert-danger col-sm-4" >
+                  <div [hidden]='!accNoFrom.errors.required'  >*Please Enter Account Number</div>
+               </small>
+            </div>
+
+            <br>
+
+            <div class="from-group row">
+                <label class="col-sm-2 col-form-label">Recipient Account Number</label>
+                <div class="col-sm-6">
+                  <input type="number" class="form-control" #accNoTo='ngModel' [ngClass]="{ 's-invalid': userForm.submitted && accNoTo.invalid }" name="accNoTo" placeholder="Enter Account number" required  ngModel>
+                </div>
+                <small *ngIf="userForm.submitted && accNoTo.invalid" class="alert alert-danger col-sm-4" >
+                  <div [hidden]='!accNoTo.errors.required'  >*Please Enter Account Number</div>
+               </small>
+            </div>
+
+            <br>
+           
+          <div class="from-group row">
+            <label class="col-sm-2 col-form-label">Amount</label>
+            <div class="col-sm-6">
+              <input type="number" class="form-control" #amount='ngModel' [ngClass]="{ 's-invalid': userForm.submitted && amount.invalid }" name="amount" placeholder="Enter amount" min="1" required  ngModel>
+            </div>
+            <small *ngIf="userForm.submitted && amount.invalid" class="alert alert-danger col-sm-4" >
+              <div [hidden]='!amount.errors.required'  >*Please Enter Amount</div>
+              <div [hidden]='!amount.errors.min'  >*Should be greater than 0</div>
+           </small>
+          </div>
+          <br>
+          <button type="submit" class="btn btn-primary col-sm-2">Transfer</button>
+        </form>
+      </div>
+    </div>
+  </div>

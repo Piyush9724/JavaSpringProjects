@@ -1,0 +1,58 @@
+<div class="card" id="crd">
+    <div class="card-body">
+      <div class="container" id="crd">
+        <br>
+        <h2>Create a new Account with  Us</h2>
+        <br>
+        <form #userForm='ngForm' (ngSubmit)="onSubmit(userForm)">
+          
+          <div class="from-group row">
+            <label class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" #name='ngModel' [ngClass]="{ 's-invalid': userForm.submitted && name.invalid }" name="name" placeholder="Enter your Name" minlength="3" required  ngModel>
+            </div>
+            <small *ngIf="userForm.submitted && name.invalid" class="alert alert-danger col-sm-4" >
+              <div [hidden]='!name.errors.required'  >*Please Enter Name</div>
+              <div [hidden]='!name.errors.minlength'  >*Name should be atleast 3 chars</div>
+           </small>
+          </div>
+          <br>
+          <div class="from-group row">
+            <label class="col-sm-2 col-form-label">Mobile Number</label>
+            <div class="col-sm-6">
+              <input type="number" class="form-control"  #mobno='ngModel' [ngClass]="{'s-invalid': userForm.submitted && mobno.invalid}" pattern="^(\+?\d{1,4}[\s-])?(?!0+\s+,?$)\d{10}\s*,?$" required name="mobno" placeholder="Enter mobile no." ngModel>
+            </div>
+            <small *ngIf="userForm.submitted && mobno.invalid" class="alert alert-danger col-sm-4" >
+                <div [hidden]='!mobno.errors.required'  >*Please Enter Mobile no.</div>
+                <div [hidden]='!mobno.errors.pattern'  >*Must be 10 digits</div>
+             </small>
+          </div>
+          <br>
+          <div class="from-group row">
+            <label class="col-sm-2 col-form-label">Opening Balance</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" #openingBal='ngModel' [ngClass]="{'s-invalid': userForm.submitted && openingBal.invalid}" name="openingBal" placeholder="Enter Openeing balance" required minlength="4" ngModel>
+            </div>
+            <small *ngIf="userForm.submitted && mobno.invalid" class="alert alert-danger col-sm-4" >
+                <div [hidden]='!openingBal.errors.required'  >*Please Enter Opening Bal</div>
+                <div [hidden]='!openingBal.errors.minlength'  >*Must be atleast 1000</div>
+             </small>
+          </div>
+          <br>
+          <div class="from-group row">
+            <label class="col-sm-2 col-form-label">Date of Birth</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control"  #dob='ngModel' [ngClass]="{'s-invalid': userForm.submitted && dob.invalid}" name="dateOfBirth" pattern="^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$" required placeholder="Enter Date of birth dd/mm/yyyy" ngModel>
+            </div>
+            <small *ngIf="userForm.submitted && mobno.invalid" class="alert alert-danger col-sm-4" >
+                <div [hidden]='!dob.errors.required'  >*Please Enter Date of Birth</div>
+                <div [hidden]='!dob.errors.pattern'  >*Must be dd/mm/yyyy</div>
+             </small>
+          </div>
+          <br>
+          <button type="submit" class="btn btn-primary col-sm-2">Add</button>
+          <button type="reset" class="btn btn-primary col-sm-2" style="margin-left: 20px">Reset</button>
+        </form>
+      </div>
+    </div>
+  </div>

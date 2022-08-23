@@ -1,0 +1,38 @@
+<div class="card" id="crd" >
+    <div class="card-body">
+      <div class="conatiner">
+            <form #userForm='ngForm' (ngSubmit)="onSubmit(userForm)">
+          
+                    <div class="from-group row">
+                        <label class="col-sm-2 col-form-label">Account Number</label>
+                        <div class="col-sm-6">
+                          <input type="number" class="form-control" #accNo='ngModel' [ngClass]="{ 's-invalid': userForm.submitted && accNo.invalid }" name="accNo" placeholder="Enter Account number" required  ngModel>
+                        </div>
+                        <small *ngIf="userForm.submitted && accNo.invalid" class="alert alert-danger col-sm-4" >
+                          <div [hidden]='!accNo.errors.required'  >*Please Enter Account Number</div>
+                       </small>
+                    </div>
+                  <br>
+                  <button type="submit" class="btn btn-primary col-sm-2">Show</button>
+                </form>
+                <br>
+
+        <table class="table table-striped" >
+          <tr>
+            <th>Transaction Id</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Date</th>
+          </tr>
+          <tr *ngFor='let transaction of Transactions'>
+            <td> {{transaction.tranId}} </td>
+            <td> {{transaction.description}} </td>
+            <td> {{transaction.tranType}} </td>
+            <td> {{transaction.amount}} </td>
+            <td> {{transaction.tranDate}} </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>

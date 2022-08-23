@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand navbar-dark bg-primary navbar-inverse ">
+    <a class="navbar-brand" href="#" routerLink="/home">Home</a>
+    
+  <ul class="nav navbar-nav" >
+    <li class="nav-item" ><a class="nav-link" routerLink="/showAcc" >Show Accounts</a></li>
+    <li class="nav-item" ><a class="nav-link" routerLink="/add" >Create Account</a></li>
+    <li class="nav-item" ><a class="nav-link" routerLink="/balance" >Show Balance</a></li>
+    <li class="nav-item" ><a class="nav-link" routerLink="/deposit" >Deposit</a></li>
+    <li class="nav-item" ><a class="nav-link" routerLink="/withdraw" >Withdraw</a></li>
+    <li class="nav-item" ><a class="nav-link" routerLink="/fundTransfer" >Fund Transfer</a></li>
+    <li class="nav-item" ><a class="nav-link" routerLink="/print" >Show Transactions</a></li>
+  </ul>
+  <div class="nav navbar-nav navbar-right">
+      <form class="form-inline my-2 my-lg-0"  #userForm='ngForm' (ngSubmit)="onSubmit(userForm)">
+   
+          <input type="number" class="form-control mr-sm-2" #accNo='ngModel' placeholder="Account ID" aria-label="Search" [ngClass]="{ 's-invalid': userForm.submitted && accNo.invalid }" name="accNo" placeholder="Enter Account number" required  ngModel>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign In</button>
+        </form>
+  </div>
+  
+</nav>
+<router-outlet></router-outlet>
+ 
